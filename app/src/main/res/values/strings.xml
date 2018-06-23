@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GetReady</string>
+    <string name="title_activity_drawer">Data Structure</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Support us for more update</string>
+    <string name="nav_header_subtitle">We are continuously adding quesstion and answer</string>
+    <string name="title_activity_second_nav">Data Structure</string>
+    <string name="title_activity_third">Data Structure</string>
+</resources>
