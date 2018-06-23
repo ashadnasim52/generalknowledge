@@ -18,14 +18,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="7"
         android:id="@+id/ADD"
-        android:layout_marginStart="8dp">
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_weight="7">
 
         <ImageView
             android:layout_width="match_parent"
@@ -33,11 +32,12 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
 
-            android:src="@mipmap/ic_launcher"
             android:background="#b0f442"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
 
     </RelativeLayout>
+
 
 
 </LinearLayout>

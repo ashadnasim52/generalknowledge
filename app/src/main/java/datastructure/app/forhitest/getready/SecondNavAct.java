@@ -1,13 +1,21 @@
 package datastructure.app.forhitest.getready;
 
+
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -48,15 +56,12 @@ public class SecondNavAct extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         ImageView adImage = (ImageView) findViewById(R.id.adImage);
-        adImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://courses.learncodeonline.in/"));
-                startActivity(browserIntent);
 
-            }
-        });
+
+
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -72,12 +77,46 @@ public class SecondNavAct extends AppCompatActivity
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mylistofitem = new ArrayList<>();
+        adImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://courses.learncodeonline.in/"));
+                startActivity(browserIntent);
+
+            }
+        });
         parseJSON();
 
+
+
+
     }
+    public void showdailog()
+    {
+        AlertDialog.Builder builder=new AlertDialog.Builder(new ContextThemeWrapper(this,R.style.Theme_AppCompat_Light_Dialog_Alert));
+        builder.setMessage("Opps! Something went wrong are you connected to internet ")
+        .setCancelable(false)
+        .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+            }
+        })
+                .setNegativeButton("Quit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        moveTaskToBack(true);
+                    }
+                });
+
+        AlertDialog alert = builder.create();
+        alert.show();
 
 
+
+
+    }
     private void parseJSON() {
         String murl = "https://opentdb.com/api.php?amount=49&category=18&type=multiple";
 
@@ -134,6 +173,10 @@ public class SecondNavAct extends AppCompatActivity
                                 myAdapter = new mAdapter(getApplicationContext(), mylistofitem);
                                 mRecyclerView.setAdapter(myAdapter);
 
+                            }
+                            else
+                            {
+                                showdailog();
                             }
 
 
