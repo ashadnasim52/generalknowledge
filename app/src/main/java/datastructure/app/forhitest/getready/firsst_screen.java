@@ -19,7 +19,7 @@ public class firsst_screen extends AppCompatActivity {
                 startActivity(i);
 
             }
-        },2000);
+        },2000000);
 //Changed need to change to 2000
     }
 }

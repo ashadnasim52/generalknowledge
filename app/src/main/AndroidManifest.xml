@@ -22,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Question" />
         <activity
             android:name=".Drawer"
             android:label="@string/title_activity_drawer"
@@ -34,7 +33,9 @@
         <activity
             android:name=".third"
             android:label="@string/title_activity_third"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>
