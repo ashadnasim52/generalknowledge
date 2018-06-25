@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -43,6 +42,7 @@ public class mAdapter extends RecyclerView.Adapter<mAdapter.ExampleViewHolder> {
 
 //        Picasso.with(mContext).load(myQuestion).fit().centerInside().into(holder.mImageView);
     }
+
 
 
     @Override

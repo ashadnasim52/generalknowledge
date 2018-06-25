@@ -3,7 +3,7 @@
     package="datastructure.app.forhitest.getready">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -33,6 +33,12 @@
         <activity
             android:name=".third"
             android:label="@string/title_activity_third"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".navigationfour"
+            android:label="@string/title_activity_navigationfour"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>

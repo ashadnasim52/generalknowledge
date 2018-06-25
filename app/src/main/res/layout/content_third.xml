@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fffdb7"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
     tools:context=".third"
-    android:background="@drawable/bech"
     tools:showIn="@layout/app_bar_third">
 
     <android.support.v7.widget.CardView
@@ -14,31 +16,101 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:background="#79b8d1"
         android:elevation="8dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/quiz2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/adView">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="#79b8d1"
             android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#79b8d1"
                 android:fontFamily="sans-serif"
-                android:text="proceed\nfor\nquiz"
+                android:text="Computers"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textSize="30sp"
-                android:textStyle="bold" />
+                android:layout_margin="20sp"
+                android:padding="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </android.support.constraint.ConstraintLayout>
 
 
     </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/quiz2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="#79b8d1"
+        android:elevation="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quiz">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="#79b8d1"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#79b8d1"
+                android:fontFamily="sans-serif"
+                android:text="Gadgets"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_margin="20sp"
+                android:padding="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        ads:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.gms.ads.AdView>
+
 </android.support.constraint.ConstraintLayout>

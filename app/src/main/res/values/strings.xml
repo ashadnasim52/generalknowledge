@@ -1,10 +1,14 @@
 <resources>
-    <string name="app_name">GetReady</string>
+    <string name="app_name">Computer IQ Knowledge </string>
     <string name="title_activity_drawer">Data Structure</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Support us for more update</string>
-    <string name="nav_header_subtitle">We are continuously adding quesstion and answer</string>
-    <string name="title_activity_second_nav">Data Structure</string>
-    <string name="title_activity_third">Data Structure</string>
+    <string name="nav_header_title">All content are getting from open trivia database</string>
+    <string name="nav_header_subtitle">opendb</string>
+    <string name="title_activity_second_nav">Computer GK</string>
+    <string name="title_activity_third">Computer GK</string>
+    <string name="banner_ad_unit_id">ca-app-pub-4465784669656039/9153042891</string>
+    <string name="title_activity_navigationfour">Computer GK</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>

@@ -90,7 +90,7 @@ public class Drawer extends AppCompatActivity
                                 String mquestion=jsonObjectinarray.getString("question");
                                 String manswer=jsonObjectinarray.getString("Answer");
 
-                                Log.i("mquestion","is "+mquestion);
+                                //.i("mquestion","is "+mquestion);
 
 
                                 mylistofitem.add(new itemcalss(mquestion, manswer));

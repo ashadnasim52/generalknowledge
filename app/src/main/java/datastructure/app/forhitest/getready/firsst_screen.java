@@ -17,9 +17,10 @@ public class firsst_screen extends AppCompatActivity {
             public void run() {
                 Intent i=new Intent(getApplicationContext(),third.class);
                 startActivity(i);
+                finish();
 
             }
-        },2000000);
+        },2000);
 //Changed need to change to 2000
     }
 }

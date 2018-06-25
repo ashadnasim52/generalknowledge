@@ -18,23 +18,43 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class third extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    CardView cardviewofquiz;
+    CardView cardviewofquizzz;
+    CardView cardviewofquiz2;
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        cardviewofquiz=findViewById(R.id.quiz);
+        cardviewofquizzz=findViewById(R.id.quiz);
+        cardviewofquiz2=findViewById(R.id.quiz2);
         setSupportActionBar(toolbar);
 
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        cardviewofquiz.setOnClickListener(new View.OnClickListener() {
+        cardviewofquizzz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(getApplicationContext(),SecondNavAct.class);
                 startActivity(i);
+            }
+        });
+        cardviewofquiz2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),navigationfour.class);
+
+                startActivity(i);
+
             }
         });
 
@@ -152,8 +172,8 @@ public class third extends AppCompatActivity implements NavigationView.OnNavigat
                 Intent intent=new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
                 intent.putExtra(Intent.EXTRA_TEXT,Uri.parse("Hey !\n" +
-                        "interview preparation app for data sharing \n") + "http://play.google.com/store/apps/details?id="+this.getPackageName());
-                Intent ic=Intent.createChooser(intent,"want to share with");
+                        "use this computer knowledge app to check your knowledge and learn new thing \n") + "http://play.google.com/store/apps/details?id="+this.getPackageName());
+                Intent ic=Intent.createChooser(intent,"Want to share with");
                 startActivity(ic);
             }
             catch (Exception e)

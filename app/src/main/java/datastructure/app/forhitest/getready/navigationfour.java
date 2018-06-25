@@ -41,7 +41,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class SecondNavAct extends AppCompatActivity
+public class navigationfour extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
@@ -56,7 +56,7 @@ public class SecondNavAct extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second_nav);
+        setContentView(R.layout.activity_navigationfour);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -96,13 +96,13 @@ public class SecondNavAct extends AppCompatActivity
     {
         AlertDialog.Builder builder=new AlertDialog.Builder(new ContextThemeWrapper(this,R.style.Theme_AppCompat_Light_Dialog_Alert));
         builder.setMessage("Opps! Something went wrong are you connected to internet ")
-        .setCancelable(false)
-        .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-            }
-        })
+                .setCancelable(false)
+                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                    }
+                })
                 .setNegativeButton("Quit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -120,7 +120,7 @@ public class SecondNavAct extends AppCompatActivity
     private void parseJSON() {
         toastofmine.show();
 
-        String murl = "https://opentdb.com/api.php?amount=49&category=18&type=multiple";
+        String murl = "https://opentdb.com/api.php?amount=49&category=15&type=multiple";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, murl, null,
                 new Response.Listener<JSONObject>() {
@@ -136,7 +136,7 @@ public class SecondNavAct extends AppCompatActivity
 //                                String mquestion=jsonObjectinarray.getString("question");
 //                                String manswer=jsonObjectinarray.getString("Answer");
 //
-//                                Log.i("mquestion","is "+mquestion);
+//                                //.i("mquestion","is "+mquestion);
 //
 //
 //                                mylistofitem.add(new itemcalss(mquestion, manswer));
@@ -225,10 +225,10 @@ public class SecondNavAct extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.refresh) {
             Toast.makeText(getApplicationContext(), "Refreshed", Toast.LENGTH_SHORT).show();
 
-            Intent i=new Intent(getApplicationContext(),SecondNavAct.class);
+            Intent i=new Intent(getApplicationContext(),navigationfour.class);
             startActivity(i);
             finish();
         }
