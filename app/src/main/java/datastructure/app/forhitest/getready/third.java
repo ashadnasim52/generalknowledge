@@ -40,7 +40,6 @@ public class third extends AppCompatActivity implements NavigationView.OnNavigat
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         cardviewofquizzz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,26 +58,6 @@ public class third extends AppCompatActivity implements NavigationView.OnNavigat
         });
 
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Thanks for contacting us", Snackbar.LENGTH_LONG).show();
-
-                Handler h=new Handler();
-                h.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        //i had done this only to show snack bar
-                        //what a joke
-
-                        Intent intent = new Intent (Intent.ACTION_VIEW , Uri.parse("mailto:" + "ashadnasim123@gmail.com"));
-                        intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestions");
-                        intent.putExtra(Intent.EXTRA_TEXT, "");
-                        startActivity(intent);
-                    }
-                }, 800);
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
